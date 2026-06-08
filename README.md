@@ -3,6 +3,9 @@ Face-Tracking camera Arduino project that keeps a detected face centralized on t
 
 System build around OpenCV library on Python that detects faces from a webcam feed. The position of the face is transmitted to an Arduino, which processes the offset values and applies a proportional (P) control algorithm to drive two microservos. The servos rotate the camera platform in the horizontal and vertical axis, allowing the camera to continuously follow and center the detected face.
 
+<img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/67604e16-cd33-4f85-a637-a1081d3631b0" />
+
+
 # Microservo Detailed Control System
 Python code using OpenCV detects faces within the webcam feed and determines their positions in the image. When multiple faces are detected, the system selects a target based on the area of each detected face, prioritizing the largest face in the frame. The program then calculates the X (horizontal), and Y (vertical) pixel offsets between the face center and image center. These offsets represent the error values in the X and Y axes. The error values are transmitted to an Arduino through serial communication. A proportional (P) controller is applied to each value, controlling the pan and tilt servos. This allows the camera to adjust its orientation and keep the target face in the center of the frame.
 
